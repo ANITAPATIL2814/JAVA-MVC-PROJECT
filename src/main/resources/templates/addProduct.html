@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Product</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input[type="text"], input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        input[type="text"]:focus, textarea:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Form to submit product data -->
+<form action="/products/add" method="post">
+    <label for="prodName">Name:</label>
+    <input type="text" id="prodName" name="prodName" required /><br/>
+
+    <label for="prdPrice">Price:</label>
+    <input type="text" id="prdPrice" name="prdPrice" required /><br/>
+
+    <label for="productDescription">Description:</label>
+    <textarea id="productDescription" name="productDescription" rows="4" placeholder="Enter product description (max 255 characters)" maxlength="255"></textarea><br/>
+
+    <label for="brand">Brand:</label>
+    <input type="text" id="brand" name="brand" required maxlength="50" placeholder="Enter brand name (2-50 characters)" /><br/>
+
+    <label for="manufacturer">Manufacturer:</label>
+    <input type="text" id="manufacturer" name="manufacturer" required maxlength="50" placeholder="Enter manufacturer name (2-50 characters)" /><br/>
+
+    <label for="productImage">Product Image (URL or Path):</label>
+    <input type="text" id="productImage" name="productImage" maxlength="255" placeholder="Enter product image URL or file path (max 255 characters)" /><br/>
+
+    <input type="submit" value="Add Product"/>
+</form>
+
+</body>
+</html>
